@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller {
 	{
 		$data = [
 			"title" => "Dashboard",
-			"page" => "user/index"
+			"page" => "user/dashboard"
 		];
 
 		$this->load->view('user/templates/app', $data, FALSE);
