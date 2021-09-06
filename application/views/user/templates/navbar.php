@@ -17,13 +17,27 @@
             <li class="my-auto py-2 nav-item">
               <a class="bt mx-3 pe-2" href="#">Pricing</a>
             </li>
+            <?php if (!$this->session->userdata('email')) {
+            ?>
             <li class="nav-item dropdown pt-1">
               <a class="nav-link dropdown-toggle text-dark text-center px-5 rounded-pill bg-button-nav" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Login? </a>
               <ul class="dropdown-menu bg-button-nav" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Login</a></li>
+                <li><a class="dropdown-item" href="<?= base_url('user/Auth') ?>">Login</a></li>
                 <li><a class="dropdown-item mt-3" href="#">Register</a></li>
               </ul>
             </li>
+            <?php }
+            else{ ?>
+              <li class="nav-item dropdown pt-1">
+              <a class="nav-link dropdown-toggle text-dark text-center px-5 rounded-pill bg-button-nav" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Hi <?= $user['username']  ?> </a>
+              <ul class="dropdown-menu bg-button-nav" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Akun</a></li>
+                <li><a class="dropdown-item mt-3" href="#">Pembelian</a></li>
+                <li><a class="dropdown-item mt-3" href="<?= base_url('user/Auth/logout') ?>">logout</a></li>
+              </ul>
+            </li>
+            <?php } ?>
+            
           </ul>
         </div>
       </div>

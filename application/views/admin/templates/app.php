@@ -99,7 +99,7 @@
     </a>
 
     <!-- Sidebar -->
-		<?php $this->load->view('templates/sidebar')?>
+		<?php $this->load->view('admin/templates/sidebar')?>
     <!-- /.sidebar -->
   </aside>
 
@@ -108,7 +108,7 @@
   <!-- /.content-wrapper -->
 	
 	<!-- footer-section -->
-	<?php $this->load->view('templates/footer')?>
+	<?php $this->load->view('admin/templates/footer')?>
 	<!-- End-of-Footer -->
 
   <!-- Control Sidebar -->
