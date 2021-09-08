@@ -114,6 +114,53 @@ class Auth extends CI_Controller
 		}
 	}
 
+	//login With Google
+
+	public function google()
+	{
+		  $google_client = new Google_Client();
+		  $google_client->setClientId('930834608093-lei72sg8v9jglupg58av4m8a5dp65q0i.apps.googleusercontent.com'); //masukkan ClientID anda 
+		  $google_client->setClientSecret('58fitoY3M3g1gfUreywVb292'); //masukkan Client Secret Key anda
+		  $google_client->setRedirectUri('http://localhost/yukakad-yuk/login-google'); //Masukkan Redirect Uri anda
+		  $google_client->addScope('email');
+		  $google_client->addScope('profile');
+
+		  if(isset($_GET["code"]))
+		  {
+		   $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+		   if(!isset($token["error"]))
+		   {
+		    $google_client->setAccessToken($token['access_token']);
+		    $this->session->set_userdata('access_token', $token['access_token']);
+		    $google_service = new Google_Service_Oauth2($google_client);
+		    $data = $google_service->userinfo->get();
+		    $current_datetime = date('Y-m-d H:i:s');
+		    $user_data = array(
+		      'first_name' => $data['given_name'],
+		      'last_name'  => $data['family_name'],
+		      'email_address' => $data['email'],
+		      'profile_picture'=> $data['picture'],
+		      'updated_at' => $current_datetime
+		     );
+		    $this->session->set_userdata('user_data', $data);
+		   }									
+		  }
+		  $login_button = '';
+		  if(!$this->session->userdata('access_token'))
+		  {
+		  	
+		   redirect($google_client->createAuthUrl(),'refresh');
+		   
+		  }
+		  else
+		  {
+		  	// uncomentar kode dibawah untuk melihat data session email
+		  	// echo json_encode($this->session->userdata('access_token')); 
+		  	// echo json_encode($this->session->userdata('user_data'));
+			  redirect('dashboard', 'refresh');
+		  }
+	}
+
 	/**
 	 * Log the user out
 	 */
@@ -123,10 +170,19 @@ class Auth extends CI_Controller
 
 		// log the user out
 		$this->ion_auth->logout();
+		$this->session->unset_userdata('access_token');
+
+	  $this->session->unset_userdata('user_data');
 
 		// redirect them to the login page
 		redirect('dashboard', 'refresh');
 	}
+
+	public function logout_google()
+	 {
+	  
+	  echo "Logout berhasil";
+	 }
 
 	/**
 	 * Change password
@@ -463,10 +519,7 @@ class Auth extends CI_Controller
 	{
 		$this->data['title'] = $this->lang->line('create_user_heading');
 
-		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
-		{
-			redirect('auth', 'refresh');
-		}
+
 
 		$tables = $this->config->item('tables', 'ion_auth');
 		$identity_column = $this->config->item('identity', 'ion_auth');
@@ -507,7 +560,7 @@ class Auth extends CI_Controller
 			// check to see if we are creating the user
 			// redirect them back to the admin page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+			redirect("user/auth", 'refresh');
 		}
 		else
 		{
@@ -564,7 +617,7 @@ class Auth extends CI_Controller
 				'value' => $this->form_validation->set_value('password_confirm'),
 			];
 
-			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
+			$this->_render_page('user/auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 		}
 	}
 	/**

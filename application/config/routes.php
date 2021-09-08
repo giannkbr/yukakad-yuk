@@ -54,5 +54,9 @@ $route['default_controller'] = 'user/Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-
-$route['dashboard'] = 'user/Dashboard';
+// Route User
+$route['dashboard'] = 'user/Dashboard'; //User Dashboard
+$route['login'] = 'user/Auth/login'; //User Login
+$route['register'] = 'user/Auth/create_user'; //User Register
+$route['login-google'] = 'user/Auth/google'; //User Login With Google
+$route['logout-google'] = 'user/Auth/logout_google'; //User Login With Google
