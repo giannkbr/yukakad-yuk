@@ -13,35 +13,35 @@
 					</p>
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item <?php if (strpos($this->uri->segment(1), 'cms') !== false) { echo "menu-open";} ?>">
 				<a href="#" class="nav-link">
 					<i class="nav-icon fas fa-archway"></i>
 					<p>
-						Data
+						CMS
 						<i class="right fas fa-angle-left"></i>
 					</p>
 				</a>
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="<?= base_url('cms-hero') ?>" class="nav-link <?php if($this->uri->segment(1)=="cms-hero"){echo "active";}?>">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Hero</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="<?= base_url('cms-fitur') ?>" class="nav-link <?php if($this->uri->segment(1)=="cms-fitur"){echo "active";}?>"> 
 							<i class="far fa-circle nav-icon"></i>
-							<p>Features</p>
+							<p>Fitur</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="<?= base_url('cms-demo') ?>" class="nav-link <?php if($this->uri->segment(1)=="cms-demo"){echo "active";}?>">
 							<i class="far fa-circle nav-icon"></i>
-							<p>Demos</p>
+							<p>Demo</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">
+						<a href="#" class="nav-link <?php if($this->uri->segment(1)=="cms-packet"){echo "active";}?>">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Packet</p>
 						</a>
@@ -66,7 +66,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="nav-link">
+				<a href="<?= base_url('cms-kontak') ?>" class="nav-link <?php if($this->uri->segment(1)=="cms-kontak"){echo "active";}?>">
 					<i class="far fa-circle nav-icon"></i>
 					<p>Contact</p>
 				</a>

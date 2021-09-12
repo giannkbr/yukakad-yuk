@@ -58,6 +58,7 @@ class Auth extends CI_Controller
 			redirect('dashboard');
 		}
 	}
+	
 
 	/**
 	 * Log the user in
@@ -114,6 +115,7 @@ class Auth extends CI_Controller
 		}
 	}
 
+
 	//login With Google
 
 	public function google()
@@ -138,14 +140,22 @@ class Auth extends CI_Controller
 		    $user_data = array(
 		      'first_name' => $data['given_name'],
 		      'last_name'  => $data['family_name'],
-		      'email_address' => $data['email'],
-		      'profile_picture'=> $data['picture'],
-		      'updated_at' => $current_datetime
+		      'email' => $data['email'],
+			  'ip_address' => $this->input->ip_address(),
+			  'created_on' => time(),
+			  'active' => 1
+			  
 		     );
+			 $email = $data['email'];
+			 $query = $this->db->query("SELECT email FROM users where email = '$email'");
+			 if (!$query->num_rows()) {
+				$this->db->insert('users', $user_data);
+			 }
+			
+			 
 		    $this->session->set_userdata('user_data', $data);
 		   }									
 		  }
-		  $login_button = '';
 		  if(!$this->session->userdata('access_token'))
 		  {
 		  	

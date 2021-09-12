@@ -1,4 +1,5 @@
 <body>
+  
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
       <div class="container">
@@ -12,11 +13,12 @@
               <a class="bt mx-3" href="#">Home</a>
             </li>
             <li class="my-auto py-2 nav-item">
-              <a class="bt mx-3" href="#">Features</a>
+              <a class="bt mx-3" href="#fitur">Features</a>
             </li>
             <li class="my-auto py-2 nav-item">
-              <a class="bt mx-3 pe-2" href="#">Pricing</a>
+              <a class="bt mx-3 pe-2" href="#harga">Pricing</a>
             </li>
+            
             <?php if ($this->session->userdata('user_data')) {
             $user_data = $this->session->userdata('user_data');?>
               <li class="nav-item dropdown pt-1">

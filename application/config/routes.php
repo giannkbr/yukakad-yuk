@@ -54,6 +54,17 @@ $route['default_controller'] = 'user/Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//Route Admin
+
+//Cms
+$route['cms-hero'] = 'admin/Cms/hero'; //Admin Cms hero
+$route['cms-fitur'] = 'admin/Cms/fitur'; //Admin Cms Fitur
+$route['cms-demo'] = 'admin/Cms/demo'; //Admin Cms Demo
+$route['cms-kontak'] = 'admin/Cms/kontak'; //Admin Cms Kontak
+//End Of Cms
+
+
+
 // Route User
 $route['dashboard'] = 'user/Dashboard'; //User Dashboard
 $route['login'] = 'user/Auth/login'; //User Login
