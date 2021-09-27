@@ -1,3 +1,20 @@
+/* Merubah bentuk ScrolleBar */
+::-webkit-scrollbar{
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#d69461;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(#d69461,#fcc093) ;
+}
+/* End Ubah bentuk ScrollBar */
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -24,6 +41,7 @@ body {
 
 .logo {
   max-width: 30%;
+  filter: drop-shadow(2px 1px 2px #585858);
 }
 
 .bg-button-nav {
@@ -279,5 +297,33 @@ body {
 .rounded-pembayaran {
   border-radius: 25px;
 }
+
+@media only screen and (max-width: 420px) {
+  .margin-pembayaran {
+    padding: 20px !important;
+    margin: 0 !important;
+  }
+}
 /* ./Tamplate & Fitur */
 /* ./PEMBAYARAN */
+
+/* FORM PREMIUM */
+.btn-form-pre {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+}
+
+.form-isi {
+  border: none;
+  border-radius: 7px;
+}
+/* ./FORM PREMIUM */
+
+/* BLOG */
+.img-blog {
+  background-image: url('../img/hero/bg-hero.jpg');
+  height: 300px;
+  background-size: contain;
+}
+/* ./BLOG */

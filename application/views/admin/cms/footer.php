@@ -22,36 +22,31 @@
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
 			
-				 <!-- general form elements -->
-				 <div class="card card-primary">
+				  <!-- general form elements -->
+                  <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form Hero</h3>
+                <h3 class="card-title">Form footer</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('admin/Cms/editKontak') ?>" method="post">
+              <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="heading">Heading1</label>
-                    <input type="text" class="form-control" id="heading1" name="heading1" value="<?= $kontak['heading1'] ?>">
-                    <?= form_error('heading1', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
+                    <label for="heading1">Heading1</label>
+                    <input type="text" class="form-control" id="heading1" name="heading1" value="<?= $footer['heading1'] ?>">
                   </div>
                   <div class="form-group">
-                    <label for="subheading">Sub-Heading1</label>
-                    <input type="text" class="form-control" id="subheading1" name="subheading1" value="<?= $kontak['subheading1'] ?>">
-                    <?= form_error('subheading', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
+                    <label for="subheading1">Copyright</label>
+                    <input type="text" class="form-control" id="copyright" name="copyright" value="<?= $footer['copyright'] ?>">
                   </div>
 
                   <div class="form-group">
-                    <label for="subheading">Whatsapp</label>
-                    <input type="text" class="form-control" id="whatsapp" name="whatsapp" value="<?= $kontak['whatsapp'] ?>">
-                    <?= form_error('whatsapp', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
+                    <label for="subheading1">Instagram</label>
+                    <input type="text" class="form-control" id="instagram" name="instagram" value="<?= $footer['instagram'] ?>">
                   </div>
-
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="cek" name="cek">
                     <label class="form-check-label" for="cek">Apakah Yakin?</label>
-                    <?= form_error('cek', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -62,10 +57,12 @@
               </form>
             </div>
             <!-- /.card -->
-			
-			<!-- /.row -->
 
 		</div><!-- /.container-fluid -->
 	</section>
 	<!-- /.content -->
 </div>
+
+
+
+

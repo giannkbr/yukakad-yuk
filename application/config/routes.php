@@ -61,6 +61,7 @@ $route['cms-hero'] = 'admin/Cms/hero'; //Admin Cms hero
 $route['cms-fitur'] = 'admin/Cms/fitur'; //Admin Cms Fitur
 $route['cms-demo'] = 'admin/Cms/demo'; //Admin Cms Demo
 $route['cms-kontak'] = 'admin/Cms/kontak'; //Admin Cms Kontak
+$route['cms-footer'] = 'admin/Cms/footer'; //Admin Cms Footer
 //End Of Cms
 
 

@@ -596,8 +596,7 @@
           </div>
           <div class="text-center text-muted pt-1">or continue with</div>
           <div class="text-center h4 py-2">
-            <a href="#"><img style="width: 35px" src="<?= base_url('assets/user/') ?>img/Logo Facebook Format PNG.png" alt="" /></a>
-            <a href="#"><img style="width: 22px" src="<?= base_url('assets/user/') ?>img/Google__G__Logo.svg.png" alt="" /></a>
+            <a href="<?= base_url('user/Auth/Google') ?>"><img style="width: 22px" src="<?= base_url('assets/user/')  ?>img/Google__G__Logo.svg.png" alt="" /></a>
           </div>
           <div class="text-center">
             <p class="link-login"><a class="px-2 link-login" href="#">Sign Up</a>|<a class="px-2 link-login" href="#">Forget password!</a></p>
@@ -637,8 +636,7 @@
           </div>
           <div class="text-center text-muted pt-1">or continue with</div>
           <div class="text-center h4 py-2">
-            <a href="#"><img style="width: 35px" src="<?= base_url('assets/user/') ?>img/Logo Facebook Format PNG.png" alt="" /></a>
-            <a href="#"><img style="width: 22px" src="<?= base_url('assets/user/') ?>img/Google__G__Logo.svg.png" alt="" /></a>
+            <a href="#"><img style="width: 22px" src="<?= base_url('assets/user/') ?> img/Google__G__Logo.svg.png" alt="" /></a>
           </div>
           <div class="text-center">
             <p class="link-login"><a class="px-2 link-login" href="#">Sign Up</a>|<a class="px-2 link-login" href="#">Forget password!</a></p>

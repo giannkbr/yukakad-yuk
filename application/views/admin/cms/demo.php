@@ -29,19 +29,22 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('admin/Cms/editDemo') ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="heading1">Heading1</label>
                     <input type="text" class="form-control" id="heading1" name="heading1" value="<?= $demo['heading1'] ?>">
+                    <?= form_error('heading1', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                   <div class="form-group">
                     <label for="subheading1">Sub-Heading1</label>
                     <input type="text" class="form-control" id="subheading1" name="subheading1" value="<?= $demo['subheading1'] ?>">
+                    <?= form_error('subheading1', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="cek" name="cek">
                     <label class="form-check-label" for="cek">Apakah Yakin?</label>
+                    <?= form_error('cek', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -57,3 +60,7 @@
 	</section>
 	<!-- /.content -->
 </div>
+
+
+
+

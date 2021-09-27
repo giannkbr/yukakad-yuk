@@ -71,6 +71,13 @@
 					<p>Contact</p>
 				</a>
 			</li>
+
+			<li class="nav-item">
+				<a href="<?= base_url('cms-footer') ?>" class="nav-link <?php if($this->uri->segment(1)=="cms-footer"){echo "active";}?>">
+					<i class="far fa-circle nav-icon"></i>
+					<p>Footer</p>
+				</a>
+			</li>
 		</ul>
 		</li>
 
