@@ -11,7 +11,7 @@ class Cms extends CI_Controller {
 		$this->load->model('Admin_model', 'admin');
 	}
 
-	//hero
+	//CMS hero
 	public function hero()
 	{
 		$data = [
@@ -49,12 +49,12 @@ class Cms extends CI_Controller {
 			];
 
 			$this->admin->editHero('1', $data);
-			$this->session->set_flashdata('message', 'swal("Berhasil!", "Hero Berhasil Diedit!", "success");');
+			$this->session->set_flashdata('success-ubah', 'berhasil');
 			redirect(base_url('cms-hero'));
 		}
 	}
 
-	//end of hero
+	//end of CMS hero
 
     public function fitur()
 	{
@@ -65,6 +65,47 @@ class Cms extends CI_Controller {
 		];
 
 		$this->load->view('admin/templates/app', $data, FALSE);
+	}
+
+	public function editFitur()
+	{
+		$this->form_validation->set_rules('heading1', 'Heading1', 'required', [
+			'required' => 'Heading tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('subheading1', 'Subheading1', 'required', [
+			'required' => 'Subheading tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('heading2', 'Heading2', 'required', [
+			'required' => 'Heading tidak boleh kosong.'
+		]);
+		
+
+		$this->form_validation->set_rules('subheading2', 'Subheading2', 'required', [
+			'required' => 'Subheading tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('cek', 'Cek', 'required', [
+			'required' => 'Harap ceklis yakin jika ingin mengubah'
+		]);
+
+		if ($this->form_validation->run() == FALSE) {
+			
+			$this->hero();
+			
+		} else {
+			$data = [
+				'heading1' 	=> $this->input->post('heading1'),
+				'subheading1' => $this->input->post('subheading1'),
+				'heading2' 	=> $this->input->post('heading2'),
+				'subheading2' => $this->input->post('subheading2'),
+			];
+
+			$this->admin->editfitur('1', $data);
+			$this->session->set_flashdata('success-ubah', 'berhasil');
+			redirect(base_url('cms-hero'));
+		}
 	}
 
 	// CMS demo
@@ -105,9 +146,20 @@ class Cms extends CI_Controller {
 			];
 
 			$this->admin->editdemo('1', $data);
-			$this->session->set_flashdata('message', 'swal("Berhasil!", "Demo Berhasil Diedit!", "success");');
+			$this->session->set_flashdata('success-ubah', 'berhasil');
 			redirect(base_url('cms-demo'));
 		}
+	}
+
+	public function listdemo()
+	{
+		$data = [
+			"title" => "List Demo",
+			"page" => "admin/cms/listdemo",
+			"listdemo" => $this->admin->getListdemo()->result_array()
+		];
+
+		$this->load->view('admin/templates/app', $data, FALSE);
 	}
 
 	//end of cms demo
@@ -154,7 +206,7 @@ class Cms extends CI_Controller {
 			];
 
 			$this->admin->editKontak('1', $data);
-			$this->session->set_flashdata('message', 'swal("Berhasil!", "Whatsapp Berhasil Diedit!", "success");');
+			$this->session->set_flashdata('success-ubah', 'berhasil');
 			redirect(base_url('cms-kontak'));
 		}
 	}
@@ -170,6 +222,41 @@ class Cms extends CI_Controller {
 		];
 
 		$this->load->view('admin/templates/app', $data, FALSE);
+	}
+
+	public function editFooter()
+	{
+		$this->form_validation->set_rules('heading1', 'Heading', 'required', [
+			'required' => 'Heading tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('copyright', 'Copyright', 'required', [
+			'required' => 'Subheading tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('instagram', 'Instagram', 'required', [
+			'required' => 'Whatsapp tidak boleh kosong.'
+		]);
+
+		$this->form_validation->set_rules('cek', 'Cek', 'required', [
+			'required' => 'Harap ceklis yakin jika ingin mengubah'
+		]);
+
+		if ($this->form_validation->run() == FALSE) {
+			
+			$this->footer();
+			
+		} else {
+			$data = [
+				'heading1' 	=> $this->input->post('heading1'),
+				'copyright' => $this->input->post('copyright'),
+				'instagram' => $this->input->post('instagram')
+			];
+
+			$this->admin->editFooter('1', $data);
+			$this->session->set_flashdata('success-ubah', 'berhasil');
+			redirect(base_url('cms-footer'));
+		}
 	}
 
 }

@@ -27,6 +27,10 @@ class Admin_model extends CI_Model
 	{
 		return $this->db->get('demo');
 	}
+	public function getListdemo()
+	{
+		return $this->db->get('listdemo');
+	}
 
 	public function editDemo($id, $data)
 	{
@@ -50,6 +54,12 @@ class Admin_model extends CI_Model
 	public function getFooter()
 	{
 		return $this->db->get('footer');
+	}
+
+	public function editFooter($id, $data)
+	{
+		$this->db->update('footer', $data, ['id_footer' => $id]);
+		return $this->db->affected_rows();
 	}
 
 }

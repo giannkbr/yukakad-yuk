@@ -29,24 +29,28 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="<?= base_url('admin/Cms/editFooter') ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="heading1">Heading1</label>
                     <input type="text" class="form-control" id="heading1" name="heading1" value="<?= $footer['heading1'] ?>">
+                    <?= form_error('heading1', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                   <div class="form-group">
-                    <label for="subheading1">Copyright</label>
+                    <label for="copyright">Copyright</label>
                     <input type="text" class="form-control" id="copyright" name="copyright" value="<?= $footer['copyright'] ?>">
+                    <?= form_error('copyright', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
 
                   <div class="form-group">
-                    <label for="subheading1">Instagram</label>
+                    <label for="instagram">Instagram</label>
                     <input type="text" class="form-control" id="instagram" name="instagram" value="<?= $footer['instagram'] ?>">
+                    <?= form_error('instagram', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="cek" name="cek">
                     <label class="form-check-label" for="cek">Apakah Yakin?</label>
+                    <?= form_error('cek', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/')?>plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url('assets/')?>plugins/summernote/summernote-bs4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="<?= base_url('assets/')?>plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed"  style="font-family: 'Poppins'">
 <div class="wrapper">
@@ -147,5 +149,25 @@
 <script src="<?= base_url('assets/') ?>dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url('assets/') ?>dist/js/pages/dashboard.js"></script>
+<!-- SweetAlert2 -->
+<script src="<?= base_url('assets/') ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Page specific script -->
+<?php if ($this->session->flashdata('success-ubah')): ?>
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+      Toast.fire({
+        icon: 'success',
+        title: 'Anda Berhasil Ubah Data'
+      })
+  });
+</script>
+<?php endif;?>
 </body>
 </html>
