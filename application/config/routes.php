@@ -49,6 +49,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'auth';
+
+$route['default_controller'] = 'user/Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//Route Admin
+
+//Cms
+$route['cms-hero'] = 'admin/Cms/hero'; //Admin Cms hero
+$route['cms-fitur'] = 'admin/Cms/fitur'; //Admin Cms Fitur
+$route['cms-demo'] = 'admin/Cms/demo'; //Admin Cms Demo
+$route['cms-kontak'] = 'admin/Cms/kontak'; //Admin Cms Kontak
+$route['cms-footer'] = 'admin/Cms/footer'; //Admin Cms Footer
+//End Of Cms
+
+
+
+// Route User
+$route['dashboard'] = 'user/Dashboard'; //User Dashboard
+$route['login'] = 'user/Auth/login'; //User Login
+$route['register'] = 'user/Auth/create_user'; //User Register
+$route['login-google'] = 'user/Auth/google'; //User Login With Google
+$route['logout-google'] = 'user/Auth/logout_google'; //User Login With Google

@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller {
 			"page" => "admin/dashboard"
 		];
 
-		$this->load->view('templates/app', $data, FALSE);
+		$this->load->view('admin/templates/app', $data, FALSE);
 	}
 
 }
