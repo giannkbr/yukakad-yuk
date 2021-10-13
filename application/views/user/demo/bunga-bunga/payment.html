@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS RESET -->
+    <link href="assets/css/reset.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper.css" />
+
+    <!-- CSS PRIBADI -->
+    <link href="./assets/css/app.css" rel="stylesheet" />
+
+    <link rel="icon" href="/assets/img/yukakad-logo.png" type="image/png" />
+    <title>Payment YukAkad</title>
+</head>
+
+<body
+    style="background-image: linear-gradient(rgba(46,27,23,0.7),rgba(46,27,23,0.7)), url(./assets/image/bg3.jpg); background-size: contain; background-position: bottom;">
+        <div class="content">
+            <section class="align-items-start py-4" id="payment" style="background: #F2F2F2;">
+                <div class="card mt-3 text-dark text-start d-flex justify-content-center align-items-center">
+                    <div class="payment">
+                        <div class="judul mb-2">
+                            <h1>Pilih Metode Transfer</h1>
+                        </div>
+                        <label for="" class="fw-bold">Saldo Digital</label>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo gopay.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer Gopay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo OVO.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer OVO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo Dana.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer Dana</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <Label class="fw-bold mt-2">Debit</Label>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo-mandiri.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer Mandiri</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo-BCA.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer BCA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box" id="pilihan">
+                            <div class="row justify-content-center">
+                                <div class="col-4 ps-1"><img class="" src="./assets/icon/logo-BNI.svg" alt="">
+                                </div>
+                                <div class="col-5 text-dark">Rp. 4.002.500</div>
+                                <div class="col-2 text-end"><img id="ceklis" src="./assets/icon/ceklis.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="bawah text-white">
+                                        <p class="ps-2">Transfer BNI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="email" class="fs-7 mt-2 mb-1">
+                            Optional : Jika anda ingin mendapatkan bukti pembayaran, harap
+                            mengisi alamat email
+                        </label>
+                        <div class="input-group input-group-sm">
+                            <input type="email" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" name="email" id="email"
+                                placeholder="Masukan Email Anda">
+                        </div>
+                        <div class="text-center my-2">
+                            <a href="#" class="btn btn-primary px-4 py-0">
+                                Transfer
+                            </a>
+                            <a href="index.html" class="btn btn-secondary px-4 py-0">
+                                Kembali
+                            </a>
+                        </div>
+                    </div>
+                </div>  
+            </section>  
+        </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="/assets/js/aos.js"></script>
+
+    <!-- Jequery -->
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="/assets/js/swiper-bundle.min.js"></script>
+
+    <!-- Script Pribadi -->
+    <script src="./assets/js/app.js"></script>
+    <script>
+        $(document).on('click', '#pilihan', function () {
+            $(this).toggleClass('box active').siblings('#pilihan').attr('class', 'box');
+        })
+    </script>
+</body>
+
+</html>

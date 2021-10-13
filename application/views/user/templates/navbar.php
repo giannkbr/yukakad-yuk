@@ -4,7 +4,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
       <div class="container">
-        <a class="navbar-brand" href="#"><img class="logo" src="<?= base_url('assets/user/') ?>img/yukakad-logo.png" alt="logo-yukakad.com" /></a>
+        <a class="navbar-brand" href="<?= base_url('dashboard') ?>"><img class="logo" src="<?= base_url('assets/user/') ?>img/yukakad-logo.png" alt="logo-yukakad.com" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="bt"><i class="h1 bi bi-justify-left"></i></span>
         </button>
@@ -27,7 +27,7 @@
               <ul class="dropdown-menu bg-button-nav" aria-labelledby="navbarDropdownMenuLink">
                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">Akun</button></li>
                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pembelian</button></li>
-                <li><button class="dropdown-item" href="<?= base_url('user/Auth/logout') ?>">logout</button></li>
+                <li><a class="dropdown-item" href="<?= base_url('logout') ?>">logout</a></li>
               </ul>
             </li>
             <?php }
@@ -38,7 +38,7 @@
               <ul class="dropdown-menu bg-button-nav" aria-labelledby="navbarDropdownMenuLink">
                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">Akun</button></li>
                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal1">Pembelian</button></li>
-                <li><button class="dropdown-item" href="<?= base_url('user/Auth/logout') ?>">logout</button></li>
+                <li><a class="dropdown-item" href="<?= base_url('logout') ?>">logout</a></li>
               </ul>
             </li>
             <?php }

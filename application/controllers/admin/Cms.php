@@ -9,13 +9,18 @@ class Cms extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Admin_model', 'admin');
+		// if (!$this->ion_auth->is_admin())
+    // {
+    //   $this->session->set_flashdata('message', 'You must be an admin to view this page');
+    //   redirect('dashboard');
+    // }
 	}
 
 	//CMS hero
 	public function hero()
 	{
 		$data = [
-			"title" => "Hero",
+			"title" => "CMS Hero",
             "hero" => $this->admin->getHero()->row_array(),
 			"page" => "admin/cms/hero"
 		];
@@ -59,7 +64,7 @@ class Cms extends CI_Controller {
     public function fitur()
 	{
 		$data = [
-			"title" => "Fitur",
+			"title" => "CMS Fitur",
 			"page" => "admin/cms/fitur",
 			"fitur" => $this->admin->getFitur()->row_array()
 		];
@@ -113,7 +118,7 @@ class Cms extends CI_Controller {
 	public function demo()
 	{
 		$data = [
-			"title" => "Demo",
+			"title" => "CMS Demo",
 			"page" => "admin/cms/demo",
 			"demo" => $this->admin->getDemo()->row_array()
 		];
@@ -168,7 +173,7 @@ class Cms extends CI_Controller {
 	public function kontak()
 	{
 		$data = [
-			"title" => "Kontak",
+			"title" => "CMS Kontak",
 			"page" => "admin/cms/kontak",
 			"kontak" => $this->admin->getKontak()->row_array()
 		];
@@ -216,7 +221,7 @@ class Cms extends CI_Controller {
 	public function footer()
 	{
 		$data = [
-			"title" => "Footer",
+			"title" => "CMS Footer",
 			"page" => "admin/cms/footer",
 			"footer" => $this->admin->getFooter()->row_array()
 		];
@@ -262,5 +267,3 @@ class Cms extends CI_Controller {
 }
 
 /* End of file Cms.php */
-
-

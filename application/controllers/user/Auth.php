@@ -167,7 +167,7 @@ class Auth extends CI_Controller
 		  	// uncomentar kode dibawah untuk melihat data session email
 		  	// echo json_encode($this->session->userdata('access_token')); 
 		  	// echo json_encode($this->session->userdata('user_data'));
-			  redirect('dashboard', 'refresh');
+			  redirect($_SERVER['HTTP_REFERER']);
 		  }
 	}
 

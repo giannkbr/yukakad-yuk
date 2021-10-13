@@ -53,7 +53,7 @@
                       <?php foreach ($listdemo as $listdemo ) { ?>
                     <tr>
                       <td><?= $listdemo['id_listdemo'] ?></td>
-                      <td><?= $listdemo['link_demo'] ?></td>
+                      <td><?= $listdemo['nama_listdemo'] ?></td>
                       <td><?= $listdemo['link_harga'] ?></td>
                       <td><?= $listdemo['image'] ?></td>
                       <td><a href="#" class="btn btn-primary">Ubah</a> <a href="#" class="btn btn-danger">Hapus</a></td>

@@ -56,13 +56,18 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Route Admin
 
-//Cms
+        //Cms
 $route['cms-hero'] = 'admin/Cms/hero'; //Admin Cms hero
 $route['cms-fitur'] = 'admin/Cms/fitur'; //Admin Cms Fitur
 $route['cms-demo'] = 'admin/Cms/demo'; //Admin Cms Demo
 $route['cms-kontak'] = 'admin/Cms/kontak'; //Admin Cms Kontak
 $route['cms-footer'] = 'admin/Cms/footer'; //Admin Cms Footer
-//End Of Cms
+        //End Of Cms
+
+        //Undangan
+$route['admin-demoundangan'] = 'admin/Undangan/demo';
+
+//End Of Route Admin
 
 
 
@@ -70,5 +75,13 @@ $route['cms-footer'] = 'admin/Cms/footer'; //Admin Cms Footer
 $route['dashboard'] = 'user/Dashboard'; //User Dashboard
 $route['login'] = 'user/Auth/login'; //User Login
 $route['register'] = 'user/Auth/create_user'; //User Register
+$route['logout'] = 'user/Auth/logout'; //User Login With Google
 $route['login-google'] = 'user/Auth/google'; //User Login With Google
 $route['logout-google'] = 'user/Auth/logout_google'; //User Login With Google
+
+//Undangan
+$route['demo-undangan/(:any)'] = 'user/Undangan/demo'; //live Demo Undangan
+$route['harga-undangan/(:any)'] = 'user/Undangan/harga'; //Harga Undangan
+$route['form-reguler/(:any)'] = 'user/Undangan/form_reguler'; //live Demo Undangan
+
+$route['(:any)'] = "user/Undangan/mengundang";

@@ -25,14 +25,14 @@
       <!-- general form elements -->
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Form Demo</h3>
+          <h3 class="card-title">Form <?= $title ?></h3>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col">
             <a href="<?= base_url('admin/Cms/listdemo') ?>" class="btn btn-primary" style="margin: 10px;">List Demo</a>
           </div>
-        </div>
+        </div> -->
 
 
 
