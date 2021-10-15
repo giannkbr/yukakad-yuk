@@ -16,7 +16,7 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$data = [
-			"title" => "Dashboard",
+			"title" => "Yukakad | Dashboard",
 			"page" => "user/dashboard",
 			"user" => $this->db->get_where('users', ['email' =>$this->session->userdata('email')])->row_array(),
 			"cms_hero" => $this->db->get('cms_hero')->row_array(),
@@ -29,5 +29,3 @@ class Dashboard extends CI_Controller {
 }
 
 /* End of file Dashboard.php */
-
-

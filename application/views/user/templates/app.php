@@ -25,7 +25,7 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="<?= base_url('assets/user/') ?>css/style.css" />
 
-  <title>Yukakad.com</title>
+  <title><?= $title ?></title>
 </head>
 
 <?php $this->load->view('user/templates/navbar'); ?>

@@ -136,7 +136,7 @@
                     <img src="<?= base_url('assets/user/img/template/'.$undangan['image']) ?>" class="card-img-top img" alt="Tamplate-1" />
                     <div class="btn-group" role="group" aria-label="Basic example">
                       <a target="_blank" href="<?= base_url('demo-undangan/'.$undangan['slug']) ?>" class="btn btn-tamplate fw-300 m-2 rounded-pill">LiveDemo</a>
-                      <a target="_blank" href="<?= base_url('harga-undangan/'.$undangan['slug']) ?>" class="btn btn-tamplate fw-300 m-2 rounded-pill">CekHarga</a>
+                      <a href="<?= base_url('harga-undangan/'.$undangan['slug']) ?>" class="btn btn-tamplate fw-300 m-2 rounded-pill">CekHarga</a>
                     </div>
                   </div>
                 </div>

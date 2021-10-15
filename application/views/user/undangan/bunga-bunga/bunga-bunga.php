@@ -27,9 +27,11 @@
 </head>
 
 <body>
-  <audio loop id="music">
+  <iframe src="<?= base_url('assets/demo/bunga/') ?>audio/Its_You.mp3" allow="autoplay" style="display:none" id="music">
+  </iframe>
+  <!-- <audio autoplay loop id="music">
     <source src="<?= base_url('assets/demo/bunga/') ?>audio/Its_You.mp3" type="audio/mpeg">
-  </audio>
+  </audio> -->
   <div class="background" style="background-image: linear-gradient(rgba(46,27,23,0.7),rgba(46,27,23,0.7)), url(<?= base_url('assets/demo/bunga/') ?>image/bg3.jpg);"></div>
   <div class="content" id="pembungkus- konten">
     <!-- Music -->
@@ -123,11 +125,11 @@
           <div class="row justify-content-end mx-3 mb-3">
             <div class="col tanggal me-3 p-0">
               <img class="mb-3" src="<?= base_url('assets/demo/bunga/') ?>icon/calendar.svg" alt="calender" width="50" height="50">
-              <p>Senin, 12 December 2021</p>
+              <p><?= strftime("%A, %d %B %Y", strtotime($undangan['tanggal_akad'])) ?></p>
             </div>
             <div class="col jam p-0">
               <img class="mt-2 mb-2" src="<?= base_url('assets/demo/bunga/') ?>icon/clock.svg" alt="calender" width="50" height="50">
-              <p>10:00 WIB <br> s/d Selesai</p>
+              <p><?= strftime("%T", strtotime($undangan['tanggal_akad'])) ?> WIB <br> s/d Selesai</p>
             </div>
           </div>
         </div>
@@ -141,11 +143,11 @@
           <div class="row justify-content-end mx-3 mb-3">
             <div class="col tanggal me-3 p-0">
               <img class="mb-3" src="<?= base_url('assets/demo/bunga/') ?>icon/calendar.svg" alt="calender" width="50" height="50">
-              <p>Senin, 12 December 2021</p>
+              <p><?= strftime("%A, %d %B %Y", strtotime($undangan['tanggal_resepsi'])) ?></p>
             </div>
             <div class="col jam p-0">
               <img class="mt-2 mb-2" src="<?= base_url('assets/demo/bunga/') ?>icon/clock.svg" alt="calender" width="50" height="50">
-              <p>16:00 WIB <br> s/d Selesai</p>
+              <p><?= strftime("%T", strtotime($undangan['tanggal_resepsi'])) ?> WIB <br> s/d Selesai</p>
             </div>
           </div>
         </div>
@@ -594,5 +596,36 @@
   }
   </script>
 </body>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date(<?= date("F j, Y, g:i a"); ?>).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+    minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
 </html>

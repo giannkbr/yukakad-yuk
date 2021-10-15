@@ -78,6 +78,7 @@ $route['register'] = 'user/Auth/create_user'; //User Register
 $route['logout'] = 'user/Auth/logout'; //User Login With Google
 $route['login-google'] = 'user/Auth/google'; //User Login With Google
 $route['logout-google'] = 'user/Auth/logout_google'; //User Login With Google
+$route['halaman-login'] = 'user/Auth/page_login';
 
 //Undangan
 $route['demo-undangan/(:any)'] = 'user/Undangan/demo'; //live Demo Undangan

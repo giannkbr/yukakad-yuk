@@ -115,6 +115,16 @@ class Auth extends CI_Controller
 		}
 	}
 
+	public function page_login()
+	{
+		$data = [
+			"title" => "Yukakad | Login",
+      "page" =>  "user/auth/login",
+		];
+
+		$this->load->view('user/templates/app', $data, FALSE);
+	}
+
 
 	//login With Google
 
@@ -167,7 +177,8 @@ class Auth extends CI_Controller
 		  	// uncomentar kode dibawah untuk melihat data session email
 		  	// echo json_encode($this->session->userdata('access_token')); 
 		  	// echo json_encode($this->session->userdata('user_data'));
-			  redirect($_SERVER['HTTP_REFERER']);
+				redirect($_SERVER['HTTP_REFERER']);
+
 		  }
 	}
 
@@ -185,7 +196,7 @@ class Auth extends CI_Controller
 	  $this->session->unset_userdata('user_data');
 
 		// redirect them to the login page
-		redirect('dashboard', 'refresh');
+		redirect($_SERVER['HTTP_REFERER']);
 	}
 
 	public function logout_google()

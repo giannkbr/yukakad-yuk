@@ -40,8 +40,11 @@ class Undangan extends CI_Controller {
 
 	public function form_reguler()
 	{
+		$CI = &get_instance();
 
+	if ($CI->session->userdata('user_data') == TRUE) 
 
+{
 		$this->form_validation->set_rules('subdomain', 'Subdomain', 'required|alpha', [
 			'required' => 'Nama Mempelai Pria tidak boleh kosong.',
 			'alpha' => 'Tidak Boleh Mengandung Angka Dan Spasi'
@@ -81,6 +84,13 @@ class Undangan extends CI_Controller {
 
 			redirect(base_url('dashboard'));
 		}
+	}
+	else 
+	{
+			
+			redirect('halaman-login','refresh');
+			
+	}
 	}
 
 	public function mengundang()
