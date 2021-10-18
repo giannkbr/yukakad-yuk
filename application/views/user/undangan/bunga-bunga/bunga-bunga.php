@@ -27,11 +27,10 @@
 </head>
 
 <body>
-  <iframe src="<?= base_url('assets/demo/bunga/') ?>audio/Its_You.mp3" allow="autoplay" style="display:none" id="music">
-  </iframe>
-  <!-- <audio autoplay loop id="music">
+
+  <audio autoplay loop id="music">
     <source src="<?= base_url('assets/demo/bunga/') ?>audio/Its_You.mp3" type="audio/mpeg">
-  </audio> -->
+  </audio>
   <div class="background" style="background-image: linear-gradient(rgba(46,27,23,0.7),rgba(46,27,23,0.7)), url(<?= base_url('assets/demo/bunga/') ?>image/bg3.jpg);"></div>
   <div class="content" id="pembungkus- konten">
     <!-- Music -->
@@ -161,7 +160,8 @@
           </div>
           <div class="row my-2">
             <div class="col waktu-mundur">
-              <p>120<span> Hari</span> 23<span> Jam</span> 45<span> Menit</span> 30<span> Detik</span>
+              <p id="demo"></p>
+
               </p>
             </div>
           </div>
@@ -178,7 +178,7 @@
           <img class="mb-2" src="<?= base_url('assets/demo/bunga/') ?>/icon/location.svg" alt="lokasi-icon" width="40" height="40">
         </div>
         <div class="alamat">
-          <h4 class="text-dark">Jalan Jawa Blok F3 No 19 Tegal Alur Kalideres Jakarta Barat DKI JAKARTA
+          <h4 class="text-dark"><?= $undangan['lokasi_acara'] ?>
           </h4>
         </div>
         <div class="gmaps">
@@ -255,40 +255,22 @@
             <!-- Swiper -->
             <div style="--swiper-navigation-color: #000; --swiper-pagination-color: #fff" class="swiper mySwiper2">
               <div class="swiper-wrapper">
+                <?php foreach ($foto_preweeding as $foto_preweeding ) { ?>
                 <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto1.jpg" />
+                  <img src="<?= base_url('assets/user/img/foto/'.$foto_preweeding['foto']) ?>" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto5.jpg" />
-                </div>
+                <?php } ?>
+
               </div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper">
               <div class="swiper-wrapper">
+                <?php foreach ($foto_preweeding2 as $foto_preweeding ) { ?>
                 <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto1.jpg" />
+                  <<img width="50px" src="<?= base_url('assets/user/img/foto/'.$foto_preweeding['foto']) ?>" />
                 </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="<?= base_url('assets/demo/bunga/') ?>/image/foto5.jpg" />
-                </div>
+                <?php } ?>
+
               </div>
             </div>
           </div>
@@ -447,7 +429,7 @@
           <div class="alamat d-flex flex-column align-items-center">
             <h1 class="m-0">Alamat Rumah</h1>
             <p class="text-dark mb-3 mt-2 mx-2">
-              Jalan Jawa Blok F3 No 19 <br>Tegal Alur Kalideres Jakarta Barat DKI JAKARTA
+              <?= $undangan['lokasi_rumah'] ?>
             </p>
             <div class="gmaps mb-3">
               <div class="mapouter">
@@ -599,7 +581,7 @@
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date(<?= date("F j, Y, g:i a"); ?>).getTime();
+var countDownDate = new Date("<?= date("M j, Y H:i:s", strtotime($undangan['tanggal_akad'])); ?>").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -617,8 +599,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-    minutes + "m " + seconds + "s ";
+  document.getElementById("demo").innerHTML = days + "<span>Hari </span> " + hours + "<span>Jam </span> " +
+    minutes + "<span>Menit </span> " + seconds + "<span>Detik </span> ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
@@ -627,5 +609,9 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+
+
+
+
 
 </html>

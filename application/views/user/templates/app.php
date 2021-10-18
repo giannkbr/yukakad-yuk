@@ -41,15 +41,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="<?= base_url('user/Auth/login') ?>" method="post">
           <div class="mb-3">
-            <input type="email" class="form-control form-contact" placeholder="Masukan emailmu" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <input type="email" class="form-control form-contact" name="identity" placeholder="Masukan emailmu" id="exampleInputEmail1" aria-describedby="emailHelp" />
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control form-contact" placeholder="Masukan Passwordmu" id="exampleInputPassword1" />
+            <input type="password" class="form-control form-contact" name="password" placeholder="Masukan Passwordmu" id="exampleInputPassword1" />
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+            <input type="checkbox" name="remember" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
           <div class="d-grid gap-2">
