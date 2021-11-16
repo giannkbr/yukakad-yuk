@@ -21,6 +21,8 @@ class Dashboard extends CI_Controller {
 			"user" => $this->db->get_where('users', ['email' =>$this->session->userdata('email')])->row_array(),
 			"cms_hero" => $this->db->get('cms_hero')->row_array(),
 			"undangan"=> $this->db->get('undangan')->result_array(),
+			"paket" => $this->db->get('cms_gruppaket')->result_array(),
+			"fiturpaket" => $this->db->get('cms_fiturpaket')->result_array()
 		];
 
 		$this->load->view('user/templates/app', $data, FALSE);

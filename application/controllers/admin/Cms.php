@@ -264,6 +264,18 @@ class Cms extends CI_Controller {
 		}
 	}
 
+	public function paket()
+	{
+		$data = [
+			"title" => "CMS Paket",
+			"page" => "admin/cms/paket",
+			"paket" => $this->admin->getPaket()->result_array(),
+			"fiturpaket" => $this->admin->getFiturPaket()->result_array()
+		];
+
+		$this->load->view('admin/templates/app', $data, FALSE);
+	}
+
 }
 
 /* End of file Cms.php */

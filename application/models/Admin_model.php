@@ -88,6 +88,25 @@ class Admin_model extends CI_Model
     $this->db->query("ALTER TABLE fitur_undangan AUTO_INCREMENT = 1;");
 	}
 
+	//paket Model
+	public function getPaket()
+	{
+		return $this->db->get('cms_gruppaket');
+	}
+
+	public function getFiturPaket()
+	{
+		return $this->db->get('cms_fiturpaket');
+	}
+
+	// public function editHero($id, $data)
+	// {
+	// 	$this->db->update('cms_hero', $data, ['id_hero' => $id]);
+	// 	return $this->db->affected_rows();
+	// }
+
+	//End Hero Model
+
 }
 
 /* End of file ModelName.php */
